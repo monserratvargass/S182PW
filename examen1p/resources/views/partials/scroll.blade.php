@@ -2,25 +2,17 @@
     <div class="col-4">
       <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
         <nav class="nav nav-pills flex-column">
-          <a class="nav-link" href="#item-1">Inicio</a>
-          <nav class="nav nav-pills flex-column">
-            <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
-            <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
-          </nav>
+          <a class="nav-link" href="/">Inicio</a>
           <a class="nav-link" href="/vista1">Vista1</a>
           <a class="nav-link" href="{{route('rutavista2')}}">Vista2</a>
-          <a class="nav-link" href="#item-3">Vista3</a>
-          <nav class="nav nav-pills flex-column">
-            <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
-            <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
-          </nav>
+          <a class="nav-link" href="{{route('rutavista3')}}">Vista3</a>
         </nav>
       </nav>
     </div>
   
     <div class="col-8">
       <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
-        <div id="item-1">
+        <div id="item-1" >
           <h4>Item 1</h4>
           <p>...</p>
         </div>
@@ -32,8 +24,8 @@
           <h5>Item 1-2</h5>
           <p>...</p>
         </div>
-        <div id="item-2">
-          <h4>Item 2</h4>
+        <div id="item-2" href="{{route('rutavista2')}}">
+          <h4>Vista2</h4>
           <p>...</p>
         </div>
         <div id="item-3">

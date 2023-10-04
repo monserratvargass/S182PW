@@ -22,6 +22,4 @@ Route::get('/vista1', function () {
 });
 
 Route::view('/vista2', 'vista2')->name('rutavista2');
-Route::view('/vista3', 'vista3');
-
-Route::view('/formulario', 'formulario')->name('rutaformulario');
+Route::view('/vista3', 'vista3')->name('rutavista3');

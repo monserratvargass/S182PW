@@ -11,12 +11,8 @@
 </head>
 <body>
 
-    {{--@include('partials.navbar')--}}
-
-    @include('partials.scroll')
-
-
     @yield('contenido')
+    @include('partials.scroll')
 
 </body>
 </html>
