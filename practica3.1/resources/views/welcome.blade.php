@@ -6,6 +6,8 @@
 
 @section('contenido')
 
+<x-alerta color="secondary"/>
+
 <x-alerta color="secondary">
 
     <x-slot name="title">
