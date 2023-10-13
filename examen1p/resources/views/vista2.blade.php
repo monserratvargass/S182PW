@@ -9,4 +9,5 @@
 
 @include('partials.spinner')
 
+
 @endsection
