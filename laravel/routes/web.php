@@ -20,18 +20,21 @@ Route::view('/recuerdos', 'recuerdos')->name('rutarecuerdos');*/
 
 // rUTA INDIVIDUALES PARA CONTROLADOR
 
-/*
+
 Route::get('/', [diarioController::class,'metodoInicio'])->name('rutaincio');
 
 Route::get('/formulario', [diarioController::class,'metodoFormulario'])->name('rutaformulario');
 
-Route::get('/recuerdos', [diarioController::class,'metodoRecuerdos'])->name('rutarecuerdos');*/
+Route::get('/recuerdos', [diarioController::class,'metodoRecuerdos'])->name('rutarecuerdos');
+
+//Crear una ruta tipo POST
+Route::post('/guardarRecuerdo', [diarioController::class,'metodoGuardar'])->name('guardar');
 
 // Rutas agrupadas tipo controlador
-
+/*
 Route::controller(diarioController::class)->group(function () {
-    
+
     Route::get('/', 'metodoInicio')->name('rutaincio');
     Route::get('/formulario', 'metodoFormulario')->name('rutaformulario');
     Route::get('/recuerdos', 'metodoRecuerdos')->name('rutarecuerdos');
-});
+});*/
