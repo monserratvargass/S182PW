@@ -21,7 +21,7 @@ Route::view('/recuerdos', 'recuerdos')->name('rutarecuerdos');*/
 // rUTA INDIVIDUALES PARA CONTROLADOR
 
 
-Route::get('/', [diarioController::class,'metodoInicio'])->name('rutaincio');
+Route::get('/', [diarioController::class,'metodoInicio'])->name('rutainicio');
 
 Route::get('/formulario', [diarioController::class,'metodoFormulario'])->name('rutaformulario');
 
