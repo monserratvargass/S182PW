@@ -24,7 +24,7 @@ class validadorFormDiario extends FormRequest
     {
         return [
             //Reglas de validacion para form Diario
-            'txtTitulo' => 'required|max:2', //reglas de validacion:requerido, maximo o minimo de caracteres
+            'txtTitulo' => 'required|max:25', //reglas de validacion:requerido, maximo o minimo de caracteres
             'txtRecuerdo' => 'required|min:5',
         ];
     }

@@ -26,7 +26,7 @@ class diarioController extends Controller
             'txtRecuerdo' => 'required|min:5',
         ]); */
 
-        return "Se esta procesando tu recuerdo";
+        return redirect('/formulario')->with('confirmacion','Tu recuerdo llego al controlador'); //Retornar una direccion (reedireccion)
 
         //return $req->all();
 
