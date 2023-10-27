@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\libreriaController; /* Importar lo del controlador */
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/registroLibro', function () {
     return view('registroLibro');
-});
+}); */
+
+/* Rutas por controlador individuales */
+
+Route::get('/', [libreriaController::class,'metodoPrincipal'])->name('rutaPrincipal');
+
+Route::get('/registroLibro', [libreriaController::class,'metodoRegistroLibro'])->name('rutaRegistroL');
