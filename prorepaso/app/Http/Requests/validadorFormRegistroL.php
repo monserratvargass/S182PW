@@ -11,7 +11,7 @@ class validadorFormRegistroL extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,7 @@ class validadorFormRegistroL extends FormRequest
             // Reglas de validacion para el formulario de registro del libro
             'ISBN' => 'required|numeric|min:13', //Solo numeros y minimo de 13 digitos
             'pages' => 'required|numeric', //Solo numeros
-            'txtEmail' => 'required|email' //Formato de correo
+            'txtEmail' => 'required|email', //Formato de correo
         ];
     }
 }
