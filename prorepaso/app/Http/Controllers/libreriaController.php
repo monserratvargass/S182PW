@@ -14,4 +14,10 @@ class libreriaController extends Controller
     public function metodoRegistroLibro(){
         return view('registroLibro');
     }
+
+    /* Crear un nuevo metodo o funcion en el controlador */
+
+    public function metodoGuardarLibro(Request $req){
+        return $req->all();
+    }
 }

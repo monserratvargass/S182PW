@@ -4,7 +4,8 @@
 
 @section('contenido')
 <div class="container mt-5 col-md-6">
-<form>
+<form method="POST" action="/guardarRegistro">
+  @csrf {{-- Crear token de seguridad, este es para cada uno de los formularios --}}
     <div class="mb-3">
       <label class="form-label">ISBN</label>
       <input type="text" name="ISBN" class="form-control">

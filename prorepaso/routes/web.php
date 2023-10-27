@@ -28,3 +28,7 @@ Route::get('/registroLibro', function () {
 Route::get('/', [libreriaController::class,'metodoPrincipal'])->name('rutaPrincipal');
 
 Route::get('/registroLibro', [libreriaController::class,'metodoRegistroLibro'])->name('rutaRegistroL');
+
+/* Crear una ruta de tipo POST */
+
+Route::post('/guardarRegistro', [libreriaController::class,'metodoGuardarLibro'])->name('guardarLibro');
