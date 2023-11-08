@@ -24,7 +24,10 @@ class validadorFormRegistroL extends FormRequest
         return [
             // Reglas de validacion para el formulario de registro del libro
             'ISBN' => 'required|numeric|min:13', //Solo numeros y minimo de 13 digitos
+            'txtTitulo'=> 'required',
+            'txtAutor' => 'required',
             'pages' => 'required|numeric', //Solo numeros
+            'txtEditorial' => 'required',
             'txtEmail' => 'required|email', //Formato de correo
         ];
     }
