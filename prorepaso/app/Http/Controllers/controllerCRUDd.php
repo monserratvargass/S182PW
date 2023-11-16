@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\validadorFormRegistroL;
+//importanciones para trabajar con las BD
+use DB; //uso de query
+use Carbon\Carbon; //manejo de las horas y fechas
 
 class controllerCRUDd extends Controller
 {
@@ -13,7 +16,8 @@ class controllerCRUDd extends Controller
      */
     public function index()
     {
-        //
+        $consulRecuerdos= DB::table('tb_recuerdos')-get();
+        return view('recuerdos',compact('consulRecuerdos'));
     }
 
     /**
@@ -31,6 +35,15 @@ class controllerCRUDd extends Controller
     public function store(validadorFormRegistroL $request)
     {
         //
+
+        DB::table('tb_recuerdos')->insert([
+            "titulo"=>$request->input('txtTitulo'),
+            "recuerdo"=>$request->input('txtRecuerdo'),
+            "fecha"=>Carbon::now(),
+            "created_at"=>Carbon::now(),
+            "updated_at"=>Carbon::now(),
+        ]);
+        
         return redirect('/recuerdo/create')->with('Registro','Tu registro ha sido exitoso');
     }
 
