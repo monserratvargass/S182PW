@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\libreriaController; /* Importar lo del controlador */
+use App\Http\Controllers\controllerCRUDd;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,14 @@ Route::get('/registroLibro', function () {
 
 Route::get('/', [libreriaController::class,'metodoPrincipal'])->name('rutaPrincipal');
 
-Route::get('/registroLibro', [libreriaController::class,'metodoRegistroLibro'])->name('rutaRegistroL');
+//Route::get('/registroLibro', [libreriaController::class,'metodoRegistroLibro'])->name('rutaRegistroL');
+
+//Rutas controllerCRUD
+Route::get('/recuerdo/create', [controllerCRUDd::class,'create'])->name('recuerdo.create');
 
 /* Crear una ruta de tipo POST */
 
-Route::post('/guardarRegistro', [libreriaController::class,'metodoGuardarLibro'])->name('guardarLibro');
+//Route::post('/guardarRegistro', [libreriaController::class,'metodoGuardarLibro'])->name('guardarLibro');
+
+//Rutas controllerCRUD
+Route::post('/recuerdo', [controllerCRUDd::class,'store'])->name('recuerdo.store');

@@ -29,7 +29,7 @@
   @endforeach
   @endif
 
-<form method="POST" action="/guardarRegistro">
+<form method="POST" action="/recuerdo">
   @csrf {{-- Crear token de seguridad, este es para cada uno de los formularios --}}
     <div class="mb-3">
       <label class="form-label">ISBN</label>
