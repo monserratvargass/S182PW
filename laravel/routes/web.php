@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\diarioController;
+use App\Http\Controllers\controllerCRUDd;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +22,14 @@ Route::view('/recuerdos', 'recuerdos')->name('rutarecuerdos');*/
 // rUTA INDIVIDUALES PARA CONTROLADOR
 
 
-Route::get('/', [diarioController::class,'metodoInicio'])->name('rutainicio');
+#Route::get('/', [diarioController::class,'metodoInicio'])->name('rutainicio');
 
-Route::get('/formulario', [diarioController::class,'metodoFormulario'])->name('rutaformulario');
+#Route::get('/formulario', [diarioController::class,'metodoFormulario'])->name('rutaformulario');
 
-Route::get('/recuerdos', [diarioController::class,'metodoRecuerdos'])->name('rutarecuerdos');
+#Route::get('/recuerdos', [diarioController::class,'metodoRecuerdos'])->name('rutarecuerdos');
 
 //Crear una ruta tipo POST
-Route::post('/guardarRecuerdo', [diarioController::class,'metodoGuardar'])->name('guardar');
+#Route::post('/guardarRecuerdo', [diarioController::class,'metodoGuardar'])->name('guardar');
 
 // Rutas agrupadas tipo controlador
 /*
@@ -38,3 +39,12 @@ Route::controller(diarioController::class)->group(function () {
     Route::get('/formulario', 'metodoFormulario')->name('rutaformulario');
     Route::get('/recuerdos', 'metodoRecuerdos')->name('rutarecuerdos');
 });*/
+
+//route de  nuvo controlador
+// ruta controllerCRUD
+Route::get('/recuerdo/create',[controllerCRUDd::class,'create'])->name('recuerdo.create');  
+Route::post('/recuerdo',[controllerCRUDd::class,'store'])->name('recuerdo.store');
+Route::get('/recuerdo',[controllerCRUDd::class,'index'])->name('recuerdo.index');
+Route::post('/recuerdo/{id}/confirm',[controllerCRUDd::class,'update'])->name('recuerdo.update');
+
+Route::get('/', [diarioController::class, 'metodoInicio'])->name('Inicio');

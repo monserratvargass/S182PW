@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\validadorFormRegistroL;
-//importanciones para trabajar con las BD
-use DB; //uso de query
-use Carbon\Carbon; //manejo de las horas y fechas
+use App\Http\Requests\validadorFormDiario;
+
+use DB;
+use Carbon\Carbon;
 
 class controllerCRUDd extends Controller
 {
@@ -16,7 +16,8 @@ class controllerCRUDd extends Controller
      */
     public function index()
     {
-        $consulRecuerdos= DB::table('tb_recuerdos')-get();
+        //
+        $consulRecuerdos= DB::table('tb_recuerdos')->get();
         return view('recuerdos',compact('consulRecuerdos'));
     }
 
@@ -26,16 +27,15 @@ class controllerCRUDd extends Controller
     public function create()
     {
         //
-        return view('registroLibro');
+        return view('formulario');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(validadorFormRegistroL $request)
+    public function store(validadorFormDiario $request)
     {
         //
-
         DB::table('tb_recuerdos')->insert([
             "titulo"=>$request->input('txtTitulo'),
             "recuerdo"=>$request->input('txtRecuerdo'),
@@ -66,7 +66,7 @@ class controllerCRUDd extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(validadorFormRegistroL $request, string $id)
+    public function update(validadorFormDiario $request, string $id)
     {
         //querybuilder acceder a traves del
         DB::table('tb_recuerdos')->where('id',$id)->update([
