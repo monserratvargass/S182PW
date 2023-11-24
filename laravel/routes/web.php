@@ -47,4 +47,6 @@ Route::post('/recuerdo',[controllerCRUDd::class,'store'])->name('recuerdo.store'
 Route::get('/recuerdo',[controllerCRUDd::class,'index'])->name('recuerdo.index');
 Route::post('/recuerdo/{id}/confirm',[controllerCRUDd::class,'update'])->name('recuerdo.update');
 
+Route::delete('recuerdo/{id}', [controllerCRUDd::class, 'destroy'])->name('recuerdo.destroy');
+
 Route::get('/', [diarioController::class, 'metodoInicio'])->name('Inicio');

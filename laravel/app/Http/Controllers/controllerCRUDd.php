@@ -44,7 +44,7 @@ class controllerCRUDd extends Controller
             "updated_at"=>Carbon::now(),
         ]);
         
-        return redirect('/recuerdo/create')->with('Registro','Tu registro ha sido exitoso');
+        return redirect('/recuerdo/create')->with('confirmacion','Tu registro ha sido exitoso');
     }
 
     /**
@@ -86,6 +86,10 @@ class controllerCRUDd extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        DB::table('tb_recuerdos')->where('id', $id)->delete();
+
+        $mensajeConfirmacion = 'Recuerdo eliminado correctamente';
+    
+        return redirect('/recuerdo')->with('confirmacion', $mensajeConfirmacion);
     }
 }
