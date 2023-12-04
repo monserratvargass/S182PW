@@ -51,12 +51,12 @@
                                 <ul class="dropdown-menu">
                                     <button type="button" class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#update{{$item->id}}">
                                         <i class="bi bi-pencil-square"></i> - Editar 
-                                      </button>
-                                    <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}">
+                                    </button>
+                                    <button type="button" class="btn btn-ñ danger m-1" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}">
                                         <i class="bi bi-trash"></i> - Borrar 
-                                      </button>
+                                    </button>
                                 </ul>
-                              </div>    
+                            </div>    
                              
                         </td>
                         
